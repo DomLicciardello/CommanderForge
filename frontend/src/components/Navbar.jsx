@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
-  AppstoreOutlined,
   SearchOutlined,
-  SettingOutlined,
   HomeOutlined,
-  CreditCardTwoTone,
   CodepenOutlined,
+  CrownOutlined,
+  ShoppingCartOutlined,
+  UserOutlined
 } from "@ant-design/icons";
-import { Menu } from "antd";
+import { Menu, Avatar } from "antd";
 import logo from "../assets/logo-orizzontale-white.png";
 import "./Navbar.css";
 
@@ -20,18 +20,28 @@ const items = [
   {
     label: "HOME",
     key: "/",
-    icon: <HomeOutlined />,
+    icon: <HomeOutlined style={{ fontSize: "16px" }} />,
   },
   {
-    label: "CERCA CARTE",
+    label: "I MIEI DECKS",
+    key: "/decks",
+    icon: <CodepenOutlined style={{ fontSize: "16px" }} />,
+  },
+  {
+    label: "RICERCA CARTE",
     key: "/search",
-    icon: <SearchOutlined />,
+    icon: <SearchOutlined style={{ fontSize: "16px" }} />,
   },
   {
-    label: "DECK",
-    ket: "/",
-    icon: <CodepenOutlined />,
-  }
+    label: "COMANDANTI",
+    key: "/commanders",
+    icon: <CrownOutlined style={{ fontSize: "16px" }} />,
+  },
+  {
+    label: "LISTA ACQUISTI",
+    key: "/cart",
+    icon: <ShoppingCartOutlined style={{ fontSize: "16px" }} />,
+  },
 ];
 
 const Navbar = () => {
@@ -44,20 +54,21 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const onClick = (e) => {
-    console.log("Navigating to:", e.key);
     setCurrent(e.key);
     navigate(e.key);
   };
 
   return (
-    <>
+    <div className="navbar-container">
       <Menu
         onClick={onClick}
         selectedKeys={[current]}
         mode="horizontal"
         items={items}
+        className="navbar-menu"
       />
-    </>
+      <Avatar size={52} icon={<UserOutlined style={{ color: "black" }}/>} className="navbar-avatar" />
+    </div>
   );
 };
 

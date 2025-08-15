@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   background-color: #000000;
+  flex: 1; /* assicura che il menu occupi tutto lo spazio disponibile */
 }
 
 .ant-menu-item {
@@ -25,4 +26,23 @@
 
 .ant-menu-item::after {
   display: none !important;
+}
+
+/* Nuove regole per posizionare avatar a destra */
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: #000000;
+}
+
+.navbar-menu {
+    flex: 1;
+    display: flex;
+}
+
+.navbar-avatar {
+    cursor: pointer;
+    background-color: white;
 }

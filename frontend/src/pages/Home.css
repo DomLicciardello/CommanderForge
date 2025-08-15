@@ -7,6 +7,7 @@
   height: 88vh;
   margin: 0;
   padding: 0;
+  padding-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,6 +26,23 @@
   height: 320px;
   width: auto;
   border-radius: 50%;
+}
+
+.home-btn {
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin: 20px 5px;
+}
+
+.home-btn:hover {
+    background-color: white;
+    color: black;
 }
 
 /* Animazioni */

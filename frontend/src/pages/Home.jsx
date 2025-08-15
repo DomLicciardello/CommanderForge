@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../assets/logo-completo.png'
-import logo1 from '../assets/logo-white.png'
-import logo2 from '../assets/logo-black.png'
+import logo from '../assets/logo-white.png'
 import './Home.css'
+import { Button } from 'antd';
 
 const Home = () => {
   const [showElements, setShowElements] = useState(false);
@@ -21,9 +20,10 @@ const Home = () => {
         <div className={`home-title ${showElements ? 'animate-slide-down' : ''}`}>
           <h2 style={{ textTransform: 'uppercase' }}>Benvenuto in Commander Forge</h2>
           <p>Gestisci i tuoi mazzi! Cerca le carte ed aggiungile al tuo deck!</p>
+          <button class="home-btn">I MIEI DECKS</button>
         </div>
         <img 
-          src={logo1} 
+          src={logo} 
           alt="Commander Forge Logo" 
           className={`home-logo ${showElements ? 'animate-slide-up' : ''}`} 
         />
