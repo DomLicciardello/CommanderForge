@@ -26,3 +26,32 @@
   width: auto;
   border-radius: 50%;
 }
+
+/* Animazioni */
+.home-title {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 1s ease-out;
+}
+
+.home-logo {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+/* Animazioni quando gli elementi diventano visibili */
+.home-title.animate-slide-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-logo.animate-slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Opzionale: per un effetto più fluido puoi aggiungere un leggero ritardo tra gli elementi */
+.home-logo.animate-slide-up {
+  transition-delay: 0.2s;
+}
